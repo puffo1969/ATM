@@ -26,5 +26,24 @@ namespace ATM.Controllers
 
             return View();
         }
+
+        public ActionResult Foo()
+        {
+            return View("About");
+        }
+
+        public ActionResult Serial(string letterCase)
+        {
+            var serial = "ASPnetmVC5ATM1";
+            if (letterCase == "lower")
+            {
+                return Content(serial.ToLower());
+            }
+            if (letterCase == "upper")
+            {
+                return Content(serial.ToUpper());
+            }
+            return Content(serial);
+        }
     }
 }
